@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mindful Forest Escape-en interaktiv skogsmiljö</title>
+  <script src="https://aframe.io/releases/1.4.2/aframe.min.js"></script>
+</head>
+<body>
+ 
+  <a-scene>
+
+    <!-- 🌤️ Enkel himmel -->
+    <a-sky color="#87CEEB"></a-sky>
+    <!-- 🟩 Mörkgrön markyta -->
+     <!-- 🌊 Glansig mörk vattenyta -->
+<a-plane  
+  position="0 -4.05 0" 
+  rotation="-90 0 0" 
+  width="500" 
+  height="500" 
+  color="#002101" 
+  material="shader: standard; roughness: 1; metalness: 0.1" 
+  shadow="receive: true">
+</a-plane>
+
+
+    <!-- 📦 Assets -->
+    <a-assets>
+      <a-asset-item id="forest_cabin" src="forest_cabin_low_poly/scene.gltf"></a-asset-item>
+      <a-asset-item id="campfire" src="brazier/scene.gltf"></a-asset-item>
+      <a-asset-item id="fire" src="bomberman_fire/scene.gltf"></a-asset-item>
+      <a-asset-item id="bridge" src="bridge/scene.gltf"></a-asset-item>
+      <a-asset-item id="duckModel" src="duck_animation/scene.gltf"></a-asset-item>
+      <a-asset-item id="butterfly" src="blue_monarch_butterfly/scene.gltf"></a-asset-item>
+      <a-asset-item id="flowers" src="earleaf_bellflower/scene.gltf"></a-asset-item>
+      <a-asset-item id="lily" src="lilypads/scene.gltf"></a-asset-item>
+      <a-asset-item id="treeScene1" src="trees/scene.gltf"></a-asset-item>
+      <a-asset-item id="treeScene" src="low_poly_tree_scene_free/scene.gltf"></a-asset-item>
+      <a-asset-item id="bike" src="bike_ardis_verona_28/scene.gltf"></a-asset-item>
+      <a-asset-item id="table" src="garden_table_and_chair/scene.gltf"></a-asset-item>
+      <a-asset-item id="owl" src="realistic_owl_3d_model/scene.gltf"></a-asset-item>
+      <audio id="fireSound" src="fire.mp3"></audio>
+      <audio id="water" src="running-water-48518.mp3"></audio>
+      <audio id="owlSound" src="tawny-owl-in-molkom-sweden-99897.mp3"></audio>
+      <audio id="ducks" src="squabbling-shell-ducks-70071.mp3"></audio>
+      <img id="waterNormal" src="https://cdn.aframe.io/examples/ui/water/Water_1_M_Normal.jpg"></a-assets>
+
+  <!-- 🎥 Kamera med knappar framför användaren -->
+      <a-entity position="0 1.6 0">
+      <a-camera wasd-controls="true" look-controls="true"></a-camera>
+      </a-entity>
+    
+
+  <!-- 🏠 Stuga -->
+      <a-entity gltf-model="#forest_cabin" position="10 -4 -40" scale="14 12 14" rotation="0 -10 0"></a-entity>
+
+
+  <!-- 🔥 Eld och eldplats-->
+
+      <a-entity gltf-model="#campfire" position="47 -3 20" scale="7 4 7"></a-entity>
+      <a-entity gltf-model="#fire" position="47 3 20" scale="0.04 0.04 0.04" rotation="0 0 0" animation="property: position; to: 47 3.2 20; dur: 800; dir: alternate; easing: easeInOutSine; loop: true"></a-entity>
+
+
+  <!-- 🪑 Bord -->
+      <a-entity gltf-model="#table" position="60 3 10" scale="15 15 15"></a-entity>
+      
+
+  <!-- Bike -->
+      <a-entity gltf-model="#bike" position="29 -0 -25" scale="0.5 0.5 0.5" rotation="0 180 0"></a-entity>
+   
+
+  <!-- 🌸 Liljor på sjön -->
+    <a-entity gltf-model="#lily" position="-10 -4 6" scale="0.003 0.003 0.003" rotation="0 15 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-5 -4 10" scale="0.003 0.003 0.003" rotation="0 -10 0"></a-entity>
+    <a-entity gltf-model="#lily" position="0 -4 8" scale="0.003 0.003 0.003" rotation="0 25 0"></a-entity>
+    <a-entity gltf-model="#lily" position="4 -4 9" scale="0.003 0.003 0.003" rotation="0 5 0"></a-entity>
+    <a-entity gltf-model="#lily" position="8 -4 4" scale="0.003 0.003 0.003" rotation="0 -20 0"></a-entity>
+    <a-entity gltf-model="#lily" position="3 -4 0" scale="0.003 0.003 0.003" rotation="0 45 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-4 -4 1" scale="0.003 0.003 0.003" rotation="0 60 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-8 -4 -2" scale="0.003 0.003 0.003" rotation="0 30 0"></a-entity>
+    <a-entity gltf-model="#lily" position="0 -4 -4.5" scale="0.003 0.003 0.003" rotation="0 10 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-20 -4 20" scale="0.003 0.003 0.003" rotation="0 -20 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-24 -4 22" scale="0.003 0.003 0.003" rotation="0 45 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-18 -4 24" scale="0.003 0.003 0.003" rotation="0 60 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-22 -4 26" scale="0.003 0.003 0.003" rotation="0 30 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-26 -4 20" scale="0.003 0.003 0.003" rotation="0 10 0"></a-entity>
+    <a-entity gltf-model="#lily" position="-28 -4 24" scale="0.003 0.003 0.003" rotation="0 -15 0"></a-entity>
+
+<!-- 🦆 Änder -->
+    <a-entity gltf-model="#duckModel" position="-12 -0.6 -15.2" scale="2 2 2" rotation="0 90 0"></a-entity>
+    <a-entity gltf-model="#duckModel" position="-5 -0.6 -12.8" scale="2 2 2" rotation="0 45 0"></a-entity>
+    <a-entity gltf-model="#duckModel" position="2 -0.6 -17.2" scale="2 2 2" rotation="0 -45 0"></a-entity>
+
+  
+<!-- 🌼 Blommor på marken -->
+    <a-entity gltf-model="#flowers" position="30 -3 -5" scale="50 50 50" rotation="0 15 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="33 -3 -6" scale="50 50 50" rotation="0 -10 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="36 -3 -7" scale="50 50 50" rotation="0 30 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="39 -3 -5" scale="50 50 50" rotation="0 5 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="42 -3 -6" scale="50 50 50" rotation="0 -20 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="45 -3 -7" scale="50 50 50" rotation="0 10 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="48 -3 -6" scale="50 50 50" rotation="0 -5 0"></a-entity>
+    <a-entity gltf-model="#flowers" position="50 -3 -5" scale="50 50 50" rotation="0 25 0"></a-entity>
+
+   
+<!-- 🦋 Fjärilar -->
+    <a-entity gltf-model="#butterfly" position="-6 -2 6"rotation="-180 0 180" scale="1 1 1" animation-mixer animation="property: position; to: -6 -1.4 6; dur: 3500; dir: alternate; easing: easeInOutSine; loop: true"></a-entity>
+    <a-entity gltf-model="#butterfly" position="3 -2 4"rotation="180 0 180" scale="1 1 1" animation-mixer animation="property: position; to: 3 -1.4 4; dur: 3200; dir: alternate; easing: easeInOutSine; loop: true"></a-entity>
+    <a-entity gltf-model="#butterfly" position="-2 -2 -3"rotation="-180 -210 180" scale="1 1 1" animation-mixer animation="property: position; to: -2 -1.4 -3; dur: 3000; dir: alternate; easing: easeInOutSine; loop: true"></a-entity>
+    <a-entity gltf-model="#butterfly" position="9 -2 6"rotation="0 180 0" scale="1 1 1" animation-mixer animation="property: position; to: 9 -1.4 6; dur: 3300; dir: alternate; easing: easeInOutSine; loop: true"></a-entity>
+
+<!-- 🌉 Bro -->
+    <a-entity gltf-model="#bridge" position="-5 -5 -15" scale="7 3 5"></a-entity>
+
+<!-- 🦉 Ugla -->
+    <a-entity id="owl" gltf-model="#owl" position="-5 2.6 -10" scale="3.5 4 4" rotation="0 360 0"></a-entity>
+
+
+<!-- 🔈 Ljud -->
+    <a-sound src="#fireSound" autoplay="true" loop="true" position="20 -3 -30" volume="30"></a-sound>
+    <a-sound src="#owlSound" autoplay="true" loop="true" position="8 14 -25" volume="50"></a-sound>
+    <a-sound src="#water" autoplay="true" loop="true" position="20 -3 -30" volume="20"></a-sound>
+    <a-sound src="#ducks" autoplay="true" loop="true" position="20 -3 -30" volume="20"></a-sound>
+
+    
+<!-- 💡 Ljus -->
+    <a-light type="point" position="0 1 2" color="#ff6600" intensity="4" distance="8"></a-light>
+    <a-light type="ambient" intensity="1.8" color="#ffffff"></a-light>
+    <a-light type="directional" intensity="1.5" position="0 10 -10" color="#ffffff"></a-light>
+
+<!-- 🌳 Träd -->
+    <a-entity gltf-model="#treeScene" position="-20 0 -10" scale="4 4 4"></a-entity>
+    <a-entity gltf-model="#treeScene" position="20 0 -12" scale="4 4 4"></a-entity>
+    <a-entity gltf-model="#treeScene" position="0 0 -25" scale="4.5 4.5 4.5"></a-entity>
+
+  </a-scene>
+</body>
+</html>
